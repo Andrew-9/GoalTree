@@ -13,11 +13,11 @@ body {
 .container {
   margin-left: -2rem;
   overflow: hidden;
+  background: var(--primary-color);
 }
 
 .item {
   display: inline-block;
-  background: var(--primary-color);
   width: 100%;
   border: 2px solid var(--secondary-color);
   margin-left: 2rem;
