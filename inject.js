@@ -77,25 +77,25 @@ function displaySteps(steps=god.steps, container=mainContainer) {
       edited(true);
     });
 
+    var collapseButton = document.createElement("button");
+    collapseButton.innerHTML = step.collapsed ? "&#9654;" : "&#9660;";
+    collapseButton.addEventListener("click", e => {
+      step.collapsed = !step.collapsed;
+      edited(true);
+    });
+
     var childContainer = document.createElement("div");
     childContainer.style.display = step.collapsed ? "none" : "block";
-
-    titleContainer.addEventListener("click", e => {
-      if (e.target.constructor.name === "HTMLDivElement" && e.target.nextSibling.innerHTML !== "") {
-        step.collapsed = !step.collapsed;
-        edited(true);
-      }
-    });
 
     titleContainer.insertAdjacentElement("beforeend", addButton);
     titleContainer.insertAdjacentElement("beforeend", title);
     titleContainer.insertAdjacentElement("beforeend", removeButton);
+    if (step.steps.length) titleContainer.insertAdjacentElement("beforeend", collapseButton);
     element.insertAdjacentElement("beforeend", titleContainer);
     element.insertAdjacentElement("beforeend", childContainer);
     container.insertAdjacentElement("beforeend", element);
 
     if (step.steps.length) {
-      titleContainer.style.cursor = "pointer";
       displaySteps(step.steps, childContainer);
     } else {
 			var createSteps = document.createElement("button");
