@@ -3,7 +3,7 @@ const PROMPT = {
 }
 
 const DEFAULT = {
-  CONTENT: [new Goal("Default", god).parseToJSON()],
+  CONTENT: [new Goal("Welcome to GoalTree!", god).parseToJSON()],
   VALUE: "New Step!"
 }
 
