@@ -1,3 +1,6 @@
+// credits!
+console.log("%cCreated by Andrew Yatzkan\n%cwith help from GitHub.com/Soareverix", "font-family: Comic Sans MS; font-size: 1.5rem; color: skyblue;", "font-family: Comic Sans MS; font-size: 1.25rem; color: skyblue;");
+
 const PROMPT = {
   DELETE: "Are you sure you would like to delete this item?"
 }
