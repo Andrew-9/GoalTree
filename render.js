@@ -99,16 +99,16 @@ function displaySteps(steps=god.steps, container=mainContainer) {
     container.insertAdjacentElement("beforeend", element);
 
     if (step.steps.length) {
-      displaySteps(step.steps, childContainer);
+	    displaySteps(step.steps, childContainer);
     } else {
-			var createSteps = document.createElement("button");
-			createSteps.innerText = "+";
-      createSteps.style.marginLeft = "4rem";
-			createSteps.addEventListener("click", e => {
-        step.addStep(DEFAULT.VALUE);
-        edited(true);
+	    var createSteps = document.createElement("button");
+	    createSteps.innerText = "+";
+	    createSteps.style.marginLeft = "4rem";
+	    createSteps.addEventListener("click", e => {
+		    step.addStep(DEFAULT.VALUE);
+		    edited(true);
 	    });
-			container.insertAdjacentElement("beforeend", createSteps);
+	    container.insertAdjacentElement("beforeend", createSteps);
     }
   }
 }
